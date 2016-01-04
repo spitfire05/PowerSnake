@@ -1,7 +1,7 @@
 # PowerSnake
 Classic snake in PowerShell console buffer - yet another example that I am very poor with priotirising my tasks.
 
-##usage
+## Usage
 
 `./powersnake [-speed n]`
 
