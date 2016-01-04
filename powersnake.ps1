@@ -25,7 +25,9 @@ SOFTWARE.
 #>
 
 param (
-    [int]$speed = 3
+    [Parameter()]
+    [int]$speed = 3,
+    [switch]$nosound
 )
 
 <#########################################
@@ -229,7 +231,7 @@ End code from: http://poshcode.org/2898
 ##########################################
 ##########################################>
 
-$version = "0.1"
+$version = "0.2"
 
 $board_x = 40
 $board_y = 40
@@ -366,6 +368,9 @@ function Game-Over
     $global:BufferPosition.x = ($board_x / 2)
     $global:BufferPosition.y = (($board_y / 2) + 2)
     Out-Buffer "Press any key to restart." 'White' 'black' -NoScroll
+
+    if(!$nosound) { [console]::Beep(500, 500) }
+
     [System.Console]::ReadKey($true)
 }
 
@@ -536,7 +541,7 @@ try
             $global:snake = $global:snake[0..($global:snake.Length - 2)]
         }
         else
-        {
+        { # food eaten
             #increment score
             $global:score++
             Draw-Score
