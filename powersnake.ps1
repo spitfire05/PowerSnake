@@ -381,7 +381,7 @@ switch ($speed)
     3 { $speed_ = 100; break }
     4 { $speed_ = 50; break }
     5 { $speed_ = 25; break }
-    default { $speed_ = 100; break }
+    default { $speed_ = 100; $speed = 3; break }
 }
 
 $pshost = Get-Host              # Get the PowerShell Host.
