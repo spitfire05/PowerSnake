@@ -388,13 +388,13 @@ try
     cls
     [console]::CursorVisible=$false
 
-    $newsize = $pswindow.BufferSize # Get the UI's current Buffer Size.
-    #$newsize.width = $board_x            # Set the new buffer's width to 150 columns.
+    <#$newsize = $pswindow.BufferSize # Get the UI's current Buffer Size.
+    #$newsize.width = $board_x 
     #$newsize.Height = 20
-    $pswindow.buffersize = $newsize # Set the new Buffer Size as active.
+    $pswindow.buffersize = $newsize # Set the new Buffer Size as active.#>
 
     $newsize = $pswindow.windowsize # Get the UI's current Window Size.
-    $newsize.width = ($board_x + $sideboard_width)           # Set the new Window Width to 150 columns.
+    $newsize.width = ($board_x + $sideboard_width)
     $newsize.Height = $board_y
     $pswindow.windowsize = $newsize # Set the new Window Size as active.
 
@@ -570,6 +570,6 @@ finally
 {
     cls
     [console]::CursorVisible=$true
-    $pswindow.buffersize = $org_buffsize
+    #$pswindow.buffersize = $org_buffsize
     $pswindow.windowsize = $org_windowsize
 }
