@@ -3,9 +3,9 @@ Classic snake in PowerShell console buffer - yet another example that I am very 
 
 ## Usage
 
-`./powersnake [-speed n] [-nosound]`
+`powershell .\powersnake [-speed n] [-nosound]`
 
-The `speed` parameter accepts values of 1-5.
+The `speed` parameter accepts values of 1-5 (defaults to 3).
 
 The `nosound` parameter can bu used to surpress console beep on snake collision.
 
